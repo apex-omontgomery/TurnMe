@@ -37,4 +37,6 @@ if __name__ == '__main__':
     IO.setmode(IO.BCM)
     IO.setup(GPIO_pin_num, IO.OUT)
     
-    running = ramp_pwm_bidirectional(GPIO_pin_num, low_pwm_percent, high_pwm_percent, pwm_frequency, ramp_interval )
+    single_ramp = ramp_pwm_bidirectional(GPIO_pin_num, low_pwm_percent, high_pwm_percent, pwm_frequency, ramp_interval )
+    single_ramp.ramp_up()
+    single_ramp.ramp_down()
