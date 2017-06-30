@@ -1,7 +1,8 @@
 import RPi.GPIO as IO
 import time
 
-class ramp_pwm_bidirectional():
+
+class ramp_pwm_bidirectional:
 
     def __init__(self, GPIO_header_num, low_pwm_percent, high_pwm_percent, pwm_frequency, ramp_interval):
         self.low_pwm_percent =  low_pwm_percent
@@ -31,12 +32,10 @@ if __name__ == '__main__':
     high_pwm_percent = 50
     pwm_frequency = 2000
     ramp_interval = 0.5
-
-    
     #IO.setwarnings(False)  
     IO.setmode(IO.BCM)
-    IO.setup(GPIO_pin_num, IO.OUT)
-    
+    IO.setup(GPIO_pin_num, IO.OUT)    
     single_ramp = ramp_pwm_bidirectional(GPIO_pin_num, low_pwm_percent, high_pwm_percent, pwm_frequency, ramp_interval )
     single_ramp.ramp_up()
     single_ramp.ramp_down()
+
